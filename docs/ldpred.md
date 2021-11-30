@@ -524,10 +524,10 @@ LDpred2 authors recommend restricting the analysis to only the HapMap3 SNPs
     reg.dat <- y
     reg.dat$PRS <- pred_auto
     auto.model <- lm(reg.formula, dat=reg.dat) %>%
-        summary
+     summary(auto.model)
     (result <- data.table(
-        auto = auto.model$r.squared - null.r2,
-        null = null.r2
+        auto = auto.model$r.squared - null.r2$R2,
+        null = null.r2$R2
     ))
     ```
 
